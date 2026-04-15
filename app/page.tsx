@@ -22,6 +22,12 @@ import {
 } from "lucide-react";
 import Image from "next/image";
 import p1 from "../public/p1.webp";
+import logo from "../public/logo.svg";
+import photo6 from "../public/p6.webp";
+import photo2 from "../public/p5.webp";
+import photo3 from "../public/p2.webp";
+import photo7 from "../public/p3.webp";
+import photo4 from "../public/p4.webp";
 
 const translations = {
   hu: {
@@ -99,7 +105,7 @@ const translations = {
     endogenous: {
       title: "Endogén szintézis és célzott biokémiai támogatás",
       p1: "A NUTRIOTAN Nutrition Systems filozófiája az endogén működés tiszteletére épül. Nem helyettesítjük a szervezetet, támogatjuk annak természetes működését és szintézisútvonalait.",
-      p2: ' \„Téglákat" adunk, amelyből ő tovább építkezik igényinek megfelelően. Nem kényszeritjük a szervezetet a biokémiai szintézisre azonban, ha szükséges egy előanyag akkor az álljon rendelkezésre megfelelő mennyiségben, minőségben és arányban. Ezzel vagyunk többek. A Termékeink összetett tápanyag rendszerek.',
+      p2: ' \„Téglákat" adunk, amelyből ő tovább építkezik igényeinek megfelelően. Nem kényszerítjük a szervezetet a biokémiai szintézisre azonban, ha szükséges egy előanyag akkor az álljon rendelkezésre megfelelő mennyiségben, minőségben és arányban. Ezzel vagyunk többek. A Termékeink összetett tápanyag rendszerek.',
       p3: "Ahol a lehetőségek megengedik nagy hangsúlyt fektetünk, a természetes forrásból származó alapanyagok felhasználására.",
       highlight:
         "A metabolikus stabilitás stratégiai előnyt jelent, legyen szó katonai műveleti környezetről vagy élsport terhelésről.",
@@ -349,12 +355,12 @@ export default function NutriotanPage() {
           <div className="flex items-center justify-between h-20">
             {/* Brand */}
             <div className="flex flex-col">
-              <span className="text-xl font-bold tracking-[0.2em] text-white">
-                {t.brand}
-              </span>
-              <span className="text-xs text-gray-400 tracking-wide">
-                {t.tagline}
-              </span>
+              <Image
+                className="max-w-40"
+                priority
+                src={logo}
+                alt="logo nutrition"
+              ></Image>
             </div>
 
             {/* Desktop Navigation */}
@@ -497,18 +503,33 @@ export default function NutriotanPage() {
           <div className="grid lg:grid-cols-[1.2fr_0.8fr] gap-7">
             {/* Main Hero Card */}
             <ScrollSection>
-              <div
-                className="relative overflow-hidden rounded-[32px] h-full border border-white/10 shadow-2xl group"
-                style={{
-                  background: `
-                    linear-gradient(135deg, rgba(6,12,20,0.84), rgba(10,18,28,0.38)),
-                    linear-gradient(180deg, rgba(0,0,0,0.1), rgba(0,0,0,0.62)),
-                    url("https://images.unsplash.com/photo-1517836357463-d25dfeac3438?auto=format&fit=crop&w=1600&q=80") center/cover
-                  `,
-                }}
-              >
-                <div className="absolute inset-0 bg-gradient-to-br from-cyan-500/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-700" />
-                <div className="relative z-10 p-8 sm:p-14 min-h-[620px] flex flex-col justify-end">
+              <div className="relative overflow-hidden rounded-[32px] h-full border border-white/10 shadow-2xl group min-h-[620px]">
+                {/* 1. Háttérkép - Kitölti a divet, nem torzul */}
+                <Image
+                  src={photo2}
+                  alt="Hero background"
+                  fill
+                  className="object-cover z-0 transition-transform duration-1000 group-hover:scale-105"
+                  priority
+                />
+
+                {/* 2. Eredeti Gradiens Overlay - Ez adja meg a sötétítést és a hangulatot */}
+                <div
+                  className="absolute inset-0 z-10 pointer-events-none"
+                  style={{
+                    background: `
+        linear-gradient(135deg, rgba(6,12,20,0.84), rgba(10,18,28,0.38)),
+        linear-gradient(180deg, rgba(0,0,0,0.1), rgba(0,0,0,0.62))
+      `,
+                  }}
+                />
+
+                {/* 3. Hover effekt (a cián villanás) */}
+                <div className="absolute inset-0 z-15 bg-gradient-to-br from-cyan-500/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-700 pointer-events-none" />
+
+                {/* 4. Tartalom - Relative z-20-al, hogy minden felett legyen */}
+                <div className="relative z-20 p-8 sm:p-14 min-h-[620px] flex flex-col justify-end">
+                  {/* Eyebrow / Jelvény */}
                   <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/10 border border-white/15 backdrop-blur-xl w-fit mb-6">
                     <span className="w-2 h-2 rounded-full bg-cyan-400 animate-pulse" />
                     <span className="text-sm tracking-wider uppercase text-gray-200">
@@ -516,10 +537,12 @@ export default function NutriotanPage() {
                     </span>
                   </div>
 
-                  <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold tracking-tight leading-none mb-4 text-balance">
+                  {/* Címsor */}
+                  <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold tracking-tight leading-none mb-4 text-balance text-white">
                     {t.hero.title}
                   </h1>
 
+                  {/* Leírások */}
                   <p className="text-lg text-gray-200 max-w-2xl mb-2 leading-relaxed">
                     {t.hero.lead1}
                   </p>
@@ -527,6 +550,7 @@ export default function NutriotanPage() {
                     {t.hero.lead2}
                   </p>
 
+                  {/* Idézet */}
                   <p className="text-xl font-semibold text-white">
                     {t.hero.quote}
                   </p>
@@ -563,17 +587,28 @@ export default function NutriotanPage() {
               </ScrollSection>
 
               <ScrollSection delay={400}>
-                <div
-                  className="relative overflow-hidden rounded-3xl border border-white/10 shadow-xl min-h-[295px] group"
-                  style={{
-                    background: `
-                      linear-gradient(180deg, rgba(5,10,16,0.22), rgba(8,15,24,0.78)),
-                      url("https://images.unsplash.com/photo-1518611012118-696072aa579a?auto=format&fit=crop&w=1200&q=80") center/cover
-                    `,
-                  }}
-                >
-                  <div className="absolute inset-0 bg-gradient-to-t from-cyan-500/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
-                  <div className="absolute left-5 bottom-5 px-4 py-2 rounded-full bg-[#0a1018]/80 border border-white/15 backdrop-blur-xl">
+                <div className="relative overflow-hidden rounded-3xl border border-white/10 shadow-xl min-h-[295px] group">
+                  {/* 1. Kép - fill és object-cover a teljes kitöltéshez */}
+                  <Image
+                    src={photo6}
+                    alt="Mito card background"
+                    fill
+                    className="object-cover z-0 transition-transform duration-700 group-hover:scale-110"
+                  />
+
+                  {/* 2. Eredeti Gradiens Overlay (Sötétítés alulról felfelé) */}
+                  <div
+                    className="absolute inset-0 z-10 pointer-events-none"
+                    style={{
+                      background: `linear-gradient(180deg, rgba(5,10,16,0.22), rgba(8,15,24,0.78))`,
+                    }}
+                  />
+
+                  {/* 3. Cián Hover Effekt */}
+                  <div className="absolute inset-0 z-15 bg-gradient-to-t from-cyan-500/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none" />
+
+                  {/* 4. Tartalom (Badge) - z-20-on, hogy felül legyen */}
+                  <div className="absolute left-5 bottom-5 z-20 px-4 py-2 rounded-full bg-[#0a1018]/80 border border-white/15 backdrop-blur-xl">
                     <span className="text-sm text-gray-100">
                       {t.cards.mito}
                     </span>
@@ -647,17 +682,29 @@ export default function NutriotanPage() {
             </ScrollSection>
 
             <ScrollSection delay={200}>
-              <div
-                className="relative overflow-hidden rounded-3xl border border-white/10 shadow-xl min-h-[420px] mb-8 group"
-                style={{
-                  background: `
-                    linear-gradient(120deg, rgba(6,11,18,0.78), rgba(15,24,36,0.22)),
-                    url("https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?auto=format&fit=crop&w=1600&q=80") center/cover
-                  `,
-                }}
-              >
-                <div className="absolute inset-0 bg-gradient-to-r from-cyan-500/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-700" />
-                <div className="absolute bottom-6 left-6 right-6 p-6 rounded-2xl bg-[#090f16]/80 backdrop-blur-xl border border-white/10">
+              <div className="relative overflow-hidden rounded-3xl border border-white/10 shadow-xl min-h-[520px] mb-8 group">
+                {/* 1. RÉTEG: A KÉP (Legalul - z-0) */}
+                <Image
+                  alt="nutrition photo"
+                  src={photo3}
+                  fill
+                  className="object-cover z-0"
+                  priority
+                />
+
+                {/* 2. RÉTEG: AZ ÁLLANDÓ GRADIENS (A kép felett - z-10) */}
+                <div
+                  className="absolute inset-0 z-10 pointer-events-none"
+                  style={{
+                    background: `linear-gradient(120deg, rgba(6,11,18,0.78), rgba(15,24,36,0.22))`,
+                  }}
+                />
+
+                {/* 3. RÉTEG: HOVER EFFEKT (Csak egér rátartáskor - z-20) */}
+                <div className="absolute inset-0 bg-gradient-to-r from-cyan-500/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-700 z-20 pointer-events-none" />
+
+                {/* 4. RÉTEG: SZÖVEGES TARTALOM (Legfelül - z-30) */}
+                <div className="absolute bottom-6 left-6 right-6 p-6 rounded-2xl bg-[#090f16]/80 backdrop-blur-xl border border-white/10 z-30">
                   <p className="text-gray-100 text-lg">{t.systems.quote}</p>
                 </div>
               </div>
@@ -707,17 +754,28 @@ export default function NutriotanPage() {
           <div className="max-w-7xl mx-auto">
             <div className="grid lg:grid-cols-[0.9fr_1.1fr] gap-7">
               <ScrollSection>
-                <div
-                  className="relative overflow-hidden h-full rounded-3xl border border-white/10 shadow-xl min-h-[460px] group"
-                  style={{
-                    background: `
-                      linear-gradient(180deg, rgba(6,12,20,0.18), rgba(8,15,24,0.72)),
-                      url("https://images.unsplash.com/photo-1526506118085-60ce8714f8c5?auto=format&fit=crop&w=1200&q=80") center/cover
-                    `,
-                  }}
-                >
-                  <div className="absolute inset-0 bg-gradient-to-t from-cyan-500/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
-                  <div className="absolute left-5 bottom-5 px-4 py-2 rounded-full bg-[#0a1018]/80 border border-white/15 backdrop-blur-xl">
+                <div className="relative overflow-hidden h-full rounded-3xl border border-white/10 shadow-xl min-h-[460px] group">
+                  {/* 1. RÉTEG: A Kép (z-0) */}
+                  <Image
+                    src={photo7}
+                    alt="Performance background"
+                    fill
+                    className="object-cover z-0 transition-transform duration-700 group-hover:scale-105"
+                  />
+
+                  {/* 2. RÉTEG: Az állandó sötétítő gradiens (z-10) */}
+                  <div
+                    className="absolute inset-0 z-10 pointer-events-none"
+                    style={{
+                      background: `linear-gradient(180deg, rgba(6,12,20,0.18), rgba(8,15,24,0.72))`,
+                    }}
+                  />
+
+                  {/* 3. RÉTEG: Hover effekt (cián sötétítés - z-20) */}
+                  <div className="absolute inset-0 z-20 bg-gradient-to-t from-cyan-500/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none" />
+
+                  {/* 4. RÉTEG: Felirat (Badge - z-30) */}
+                  <div className="absolute left-5 bottom-5 z-30 px-4 py-2 rounded-full bg-[#0a1018]/80 border border-white/15 backdrop-blur-xl">
                     <span className="text-sm text-gray-100">
                       {t.performance.photoLabel}
                     </span>
@@ -850,10 +908,26 @@ export default function NutriotanPage() {
                   <h2 className="text-3xl lg:text-4xl font-bold mb-6 text-white">
                     {t.products.title}
                   </h2>
-                  <div className="min-h-[230px] rounded-2xl border border-dashed border-white/20 bg-gradient-to-b from-white/5 to-transparent flex items-center justify-center">
-                    <span className="text-gray-300 uppercase tracking-widest font-bold">
-                      {t.products.placeholder}
-                    </span>
+                  <div className="relative min-h-[230px] rounded-2xl border border-dashed border-white/20 overflow-hidden flex items-center justify-center group">
+                    {/* 1. RÉTEG: A Kép (z-0) */}
+                    <Image
+                      src={photo4} // Ide írd a kép változóját
+                      alt="Product placeholder"
+                      fill
+                      className="object-cover z-0 transition-transform duration-700 group-hover:scale-105"
+                    />
+
+                    {/* 2. RÉTEG: Gradiens overlay (z-10) */}
+                    <div
+                      className="absolute inset-0 z-10 pointer-events-none"
+                      style={{
+                        background: `linear-gradient(to bottom, rgba(255,255,255,0.05), transparent)`,
+                      }}
+                    />
+
+                    {/* 3. RÉTEG: Sötétítő réteg, hogy a felirat mindig olvasható legyen (opcionális) */}
+                    <div className="absolute inset-0 bg-black/20 z-15 group-hover:bg-black/10 transition-colors duration-500" />
+                   
                   </div>
                 </article>
               </ScrollSection>
