@@ -14,7 +14,6 @@ import {
   Phone,
   MapPin,
   Beaker,
-  Heart,
   Brain,
   Dumbbell,
   Users,
@@ -42,12 +41,11 @@ const translations = {
       kapcsolat: "Kapcsolat",
     },
     hero: {
-      eyebrow: "NUTRIOTAN Nutrition Systems",
-      title: "Metabolikus stratégia.",
+      title: "Metabolikus stratégia",
       lead1:
         "Precíziós táplálkozás rendszerek katonáknak és sportolóknak tervezve.",
       lead2:
-        "A NUTRIOTAN Nutrition Systems tudományos alapokon fejlesztett táplálékkiegészítő rendszereket kínál azok számára, akik számára kiemelten fontos a fizikai és mentális teljesítmény, a megfelelő pihenés és regeneráció, a mentális és fizikai sérülésekből történő felépülés.",
+        "A NUTRIOTAN Nutrition Systems tudományos alapokon fejlesztett táplálékkiegészítőket kínál azok számára, akik számára kiemelten fontos a fizikai és mentális teljesítmény, a megfelelő pihenés és regeneráció, továbbá a mentális és fizikai sérülésekből történő felépülés.",
       quote: "A teljesítmény nem véletlen, a teljesítmény biokémiai stratégia.",
     },
     cards: {
@@ -56,7 +54,7 @@ const translations = {
     },
     strategy: {
       title: "Metabolikus megközelítés",
-      p1: "Megközelítésünk középpontjában a mitokondriális energiatermelés fokozása áll mellyel egy időben támogatjuk a mentális folyamatokat kizárólag különböző tápanyag a természetes metabolikán keresztül.",
+      p1: "Stratégiánk középpontjában a mitokondriális energiatermelés fokozása áll, mellyel egy időben támogatjuk a mentális és pszichés folyamatokat kizárólag a természetes metabolikán keresztül.",
       highlight:
         "A teljesítmény nem véletlen, a teljesítmény biokémiai stratégia.",
       p2: "A termékeink elsősorban a katonai igénybevételhez mérten tervezettek, amit kiválóan alkalmazhatnak sportolók.",
@@ -70,9 +68,9 @@ const translations = {
     },
     systems: {
       title: "Táplálkozási rendszerek",
-      desc: "Cél: A mitokondriális energia és a citromsav-ciklus támogatás megahatározott minőségű és mennyiségű makro-, mikronutrienseken keresztül. Meglátásunk szerint az emberi szervezetre egy rendkívül összetett rendszer ezért azt nem elég egy-két elemét támogatni, hanem figyelembe kell venni a komplexitását ezért támogatni csak komplex rendszerrel megfelelően. Aktív katonai szolgálatok során az emberi szervezet fokozott fizikai és mentális igénybevételnek van kitéve. Ugyan ez igaz a sportolókra is. Az általunk fejlesztett termék ott segít, ahol arra szükség van.",
+      desc: "Cél: A mitokondriális energia és a citromsav-ciklus támogatás meghatározott minőségű és mennyiségű makro-, mikronutrienseken keresztül. Meglátásunk szerint az emberi szervezetre egy rendkívül összetett rendszer ezért nem elég egy-két elemét támogatni, hanem figyelembe kell venni a komplexitását. Megfelelően támogatni csak komplex rendszerrel lehet. Katonai szolgálatok során az emberi szervezet fokozott fizikai és mentális igénybevételnek van kitéve. Műveleti körülmények közt ennek stratégiai jelentősége van. Ugyan ez igaz a sportolókra is. Az általunk fejlesztett termék ott segít, ahol arra szükség van.",
       quote:
-        "A teljesítmény nem csupán kalóriabevitel kérdése. A teljesítmény a sejtszintű energiahatékonyság kérdése.",
+        "A teljesítmény nem csupán kalóriabevitel kérdése. A teljesítmény a sejtszintű energiahatékonyság stratégiai eredménye.",
       card1Title: "Citromsav-ciklus kapcsolat",
       card1Desc:
         "közvetlenül vagy rövid metabolikus lépéssorozaton keresztül kapcsolódnak a citromsav-ciklushoz",
@@ -82,24 +80,30 @@ const translations = {
       card2Desc2:
         "elősegítik az izomanyagcsere és a regeneráció optimalizálását",
       card3Title: "Prekurzor háttér",
-      card3Desc1: "a fiziológiás szükséges prekurzor háttér biztosításához",
+      card3Desc1: "a fiziológiás szükséges prekurzor háttér biztosítása",
       card3Desc2:
         "Megelőzhetik a kialakulását, illetve segíthetnek a gyógyulásban a szorongás, depresszió és a PTSD kezelés során",
     },
     performance: {
       title: "Sporttáplálkozás és katonai teljesítmény támogatás",
       desc: "A NUTRIOTAN koncepciója nem a biológiai értelemben kész végtermékek pótlására, hanem olyan prekurzorok biztosítására épül, amelyekből a szervezet saját szabályozott folyamatai révén állítja elő a szükséges bioaktív molekulákat és lehetővé teszik a szervezet számára a saját, szabályozott biokémiai működés fenntartását.",
-      militaryTitle: "Katonai és fokozott terhelésnek kitett állomány",
+      militaryTitle: "Katonai és fokozott terhelésnek kitett személyeknek",
       military1: "mentális és fizikai teljesítmény fokozása és fenntartása",
       military2: "stabil energiaellátás",
       military3: "gyors reagálóképesség",
       military4: "gyors regeneráció",
-      sportsTitle: "Versenysportolók és magas teljesítményű egyének",
+      military5: "mentális pihenés fokozása",
+      military6: "fokozott reagálóképesség",
+      military7: "fokozott seb- és sérülés gyógyulás",
+      military8:
+        "poszt traumás stressz szindróma enyhítése, mentális gyógyulás elősegítése",
+      sportsTitle: "Versenysportolók és magas teljesítményűeknek",
       sports1: "energiaoptimalizálás",
       sports2: "izomregeneráció",
       sports3: "teljesítménytámogatás",
       sports4: "oxidatív egyensúly fenntartása",
       sports5: "természetes tápanyagokkal nem doppinglistás szerekkel",
+      sports6: "edzések, versenyek után a pihenés, alvás elősegítése",
       photoLabel: "Stratégiai teljesítmény | metabolikus támogatás",
     },
     endogenous: {
@@ -122,7 +126,7 @@ const translations = {
       placeholder: "Feltöltés alatt",
       devTitle: "Fejlesztési irány",
       devDesc1:
-        "A NUTRIOTAN Nutrition Systems tudományos alapokon fejlesztett táplálékkiegészítő rendszereket kínál azok számára, akik számára kiemelten fontos a fizikai és mentális teljesítmény, a megfelelő pihenés és regeneráció, a mentális és fizikai sérülésekből történő felépülés.",
+        "A NUTRIOTAN Nutrition Systems tudományos alapokon fejlesztett táplálékkiegészítőket kínál azok számára, akik számára kiemelten fontos a fizikai és mentális teljesítmény, a megfelelő pihenés és regeneráció, továbbá a mentális és fizikai sérülésekből történő felépülés.",
       devDesc2:
         "A metabolikus stabilitás stratégiai előnyt jelent, legyen szó katonai műveleti környezetről vagy élsport terhelésről.",
     },
@@ -134,8 +138,11 @@ const translations = {
     contact: {
       title: "Kapcsolat",
       address: "Cím:",
+      addressValue: "6726 Szeged, Alsó kikötő sor 11. D. ép.",
       phone: "Telefon:",
-      email: "e-mail:",
+      phoneValue: "+36 70 363 77 33",
+      email: "E-mail:",
+      emailValue: "contact@nutriotan.com",
     },
     footer: "NUTRIOTAN Nutrition Systems",
   },
@@ -151,11 +158,10 @@ const translations = {
       kapcsolat: "Contact",
     },
     hero: {
-      eyebrow: "NUTRIOTAN Nutrition Systems",
-      title: "Metabolic strategy.",
+      title: "Metabolic strategy",
       lead1: "Precision nutrition systems designed for soldiers and athletes.",
       lead2:
-        "NUTRIOTAN Nutrition Systems offers scientifically developed nutritional supplement systems for those who prioritize physical and mental performance, proper rest and recovery, and healing from mental and physical injuries.",
+        "NUTRIOTAN Nutrition Systems offers scientifically developed nutritional supplements for those who prioritize physical and mental performance, proper rest and recovery, and healing from mental and physical injuries.",
       quote:
         "Performance is not accidental, performance is a biochemical strategy.",
     },
@@ -165,7 +171,7 @@ const translations = {
     },
     strategy: {
       title: "Metabolic Approach",
-      p1: "At the core of our approach is enhancing mitochondrial energy production while simultaneously supporting mental processes exclusively through various nutrients via natural metabolism.",
+      p1: "At the core of our strategy is enhancing mitochondrial energy production, while simultaneously supporting mental and psychological processes exclusively through natural metabolism.",
       highlight:
         "Performance is not accidental, performance is a biochemical strategy.",
       p2: "Our products are primarily designed for military demands, which can be excellently applied by athletes.",
@@ -178,9 +184,9 @@ const translations = {
     },
     systems: {
       title: "Nutrition Systems",
-      desc: "Goal: Support mitochondrial energy and the citric acid cycle through precisely defined quality and quantity of macro and micronutrients. In our view, the human body is an extremely complex system, so it's not enough to support just one or two elements - we must consider its complexity and support it only with a complex system. During active military service, the human body is exposed to increased physical and mental demands. The same applies to athletes. Our developed products help where needed.",
+      desc: "Goal: Support mitochondrial energy and the citric acid cycle through precisely defined quality and quantity of macro and micronutrients. In our view, the human body is an extremely complex system, so it's not enough to support just one or two elements - we must consider its complexity. Proper support is only possible with a complex system. During military service, the human body is exposed to increased physical and mental demands. Under operational conditions, this has strategic significance. The same applies to athletes. Our developed products help where needed.",
       quote:
-        "Performance is not just about calorie intake. Performance is about cellular energy efficiency.",
+        "Performance is not just about calorie intake. Performance is the strategic outcome of cellular energy efficiency.",
       card1Title: "Citric Acid Cycle Connection",
       card1Desc:
         "directly or through short metabolic pathways connected to the citric acid cycle",
@@ -188,8 +194,7 @@ const translations = {
       card2Desc1: "support ATP production and oxidative energy processes",
       card2Desc2: "promote optimization of muscle metabolism and recovery",
       card3Title: "Precursor Background",
-      card3Desc1:
-        "to ensure the physiologically necessary precursor background",
+      card3Desc1: "ensuring the physiologically necessary precursor background",
       card3Desc2:
         "Can help prevent or aid in recovery from anxiety, depression, and PTSD treatment",
     },
@@ -202,12 +207,18 @@ const translations = {
       military2: "stable energy supply",
       military3: "quick reaction capability",
       military4: "rapid recovery",
+      military5: "enhanced mental rest",
+      military6: "enhanced reaction capability",
+      military7: "accelerated wound and injury healing",
+      military8:
+        "alleviation of post-traumatic stress disorder, support of mental healing",
       sportsTitle: "Competitive Athletes and High-Performance Individuals",
       sports1: "energy optimization",
       sports2: "muscle recovery",
       sports3: "performance support",
       sports4: "maintaining oxidative balance",
       sports5: "with natural nutrients, not doping-listed substances",
+      sports6: "promotion of rest and sleep after training and competitions",
       photoLabel: "Strategic performance | metabolic support",
     },
     endogenous: {
@@ -230,7 +241,7 @@ const translations = {
       placeholder: "Coming Soon",
       devTitle: "Development Direction",
       devDesc1:
-        "NUTRIOTAN Nutrition Systems offers scientifically developed nutritional supplement systems for those who prioritize physical and mental performance, proper rest and recovery, and healing from mental and physical injuries.",
+        "NUTRIOTAN Nutrition Systems offers scientifically developed nutritional supplements for those who prioritize physical and mental performance, proper rest and recovery, and healing from mental and physical injuries.",
       devDesc2:
         "Metabolic stability represents a strategic advantage, whether in military operational environments or elite sports stress.",
     },
@@ -242,8 +253,11 @@ const translations = {
     contact: {
       title: "Contact",
       address: "Address:",
+      addressValue: "6726 Szeged, Alsó kikötő sor 11. D. ép., Hungary",
       phone: "Phone:",
+      phoneValue: "+36 70 363 77 33",
       email: "E-mail:",
+      emailValue: "contact@nutriotan.com",
     },
     footer: "NUTRIOTAN Nutrition Systems",
   },
@@ -352,11 +366,11 @@ export default function NutriotanPage() {
         className={`sticky top-0 z-50 transition-all duration-500 ${scrolled ? "backdrop-blur-xl bg-[#071019]/90 shadow-2xl" : "backdrop-blur-xl bg-[#071019]/70"} border-b border-white/10`}
       >
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex items-center justify-between h-20">
+          <div className="flex items-center justify-between h-24">
             {/* Brand */}
             <div className="flex flex-col">
               <Image
-                className="max-w-40"
+                className="max-w-56"
                 priority
                 src={logo}
                 alt="logo nutrition"
@@ -529,14 +543,6 @@ export default function NutriotanPage() {
 
                 {/* 4. Tartalom - Relative z-20-al, hogy minden felett legyen */}
                 <div className="relative z-20 p-8 sm:p-14 min-h-[620px] flex flex-col justify-end">
-                  {/* Eyebrow / Jelvény */}
-                  <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/10 border border-white/15 backdrop-blur-xl w-fit mb-6">
-                    <span className="w-2 h-2 rounded-full bg-cyan-400 animate-pulse" />
-                    <span className="text-sm tracking-wider uppercase text-gray-200">
-                      {t.hero.eyebrow}
-                    </span>
-                  </div>
-
                   {/* Címsor */}
                   <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold tracking-tight leading-none mb-4 text-balance text-white">
                     {t.hero.title}
@@ -804,13 +810,17 @@ export default function NutriotanPage() {
                           t.performance.military2,
                           t.performance.military3,
                           t.performance.military4,
+                          t.performance.military5,
+                          t.performance.military6,
+                          t.performance.military7,
+                          t.performance.military8,
                         ].map((item, i) => (
                           <li
                             key={i}
-                            className="text-gray-300 flex items-center gap-2"
+                            className="text-gray-300 flex items-start gap-2"
                           >
-                            <span className="w-1.5 h-1.5 rounded-full bg-cyan-400" />
-                            {item}
+                            <span className="w-1.5 h-1.5 rounded-full bg-cyan-400 mt-2 flex-shrink-0" />
+                            <span>{item}</span>
                           </li>
                         ))}
                       </ul>
@@ -828,13 +838,14 @@ export default function NutriotanPage() {
                           t.performance.sports3,
                           t.performance.sports4,
                           t.performance.sports5,
+                          t.performance.sports6,
                         ].map((item, i) => (
                           <li
                             key={i}
-                            className="text-gray-300 flex items-center gap-2"
+                            className="text-gray-300 flex items-start gap-2"
                           >
-                            <span className="w-1.5 h-1.5 rounded-full bg-cyan-400" />
-                            {item}
+                            <span className="w-1.5 h-1.5 rounded-full bg-cyan-400 mt-2 flex-shrink-0" />
+                            <span>{item}</span>
                           </li>
                         ))}
                       </ul>
@@ -911,7 +922,7 @@ export default function NutriotanPage() {
                   <div className="relative min-h-[230px] rounded-2xl border border-dashed border-white/20 overflow-hidden flex items-center justify-center group">
                     {/* 1. RÉTEG: A Kép (z-0) */}
                     <Image
-                      src={photo4} // Ide írd a kép változóját
+                      src={photo4}
                       alt="Product placeholder"
                       fill
                       className="object-cover z-0 transition-transform duration-700 group-hover:scale-105"
@@ -927,7 +938,6 @@ export default function NutriotanPage() {
 
                     {/* 3. RÉTEG: Sötétítő réteg, hogy a felirat mindig olvasható legyen (opcionális) */}
                     <div className="absolute inset-0 bg-black/20 z-15 group-hover:bg-black/10 transition-colors duration-500" />
-                   
                   </div>
                 </article>
               </ScrollSection>
@@ -974,24 +984,45 @@ export default function NutriotanPage() {
                     {t.contact.title}
                   </h2>
                   <div className="space-y-4">
-                    <div className="flex items-center gap-4 p-4 rounded-xl bg-white/5 border border-white/10 hover:bg-white/10 transition-all group">
-                      <MapPin className="w-5 h-5 text-cyan-400 group-hover:scale-110 transition-transform" />
-                      <span className="text-gray-200 font-medium">
-                        {t.contact.address}
-                      </span>
+                    <div className="flex items-start gap-4 p-4 rounded-xl bg-white/5 border border-white/10 hover:bg-white/10 transition-all group">
+                      <MapPin className="w-5 h-5 text-cyan-400 group-hover:scale-110 transition-transform mt-0.5 flex-shrink-0" />
+                      <div className="flex flex-col">
+                        <span className="text-gray-400 text-sm">
+                          {t.contact.address}
+                        </span>
+                        <span className="text-gray-100 font-medium">
+                          {t.contact.addressValue}
+                        </span>
+                      </div>
                     </div>
-                    <div className="flex items-center gap-4 p-4 rounded-xl bg-white/5 border border-white/10 hover:bg-white/10 transition-all group">
-                      <Phone className="w-5 h-5 text-cyan-400 group-hover:scale-110 transition-transform" />
-                      <span className="text-gray-200 font-medium">
-                        {t.contact.phone}
-                      </span>
-                    </div>
-                    <div className="flex items-center gap-4 p-4 rounded-xl bg-white/5 border border-white/10 hover:bg-white/10 transition-all group">
-                      <Mail className="w-5 h-5 text-cyan-400 group-hover:scale-110 transition-transform" />
-                      <span className="text-gray-200 font-medium">
-                        {t.contact.email}
-                      </span>
-                    </div>
+                    <a
+                      href={`tel:${t.contact.phoneValue.replace(/\s/g, "")}`}
+                      className="flex items-start gap-4 p-4 rounded-xl bg-white/5 border border-white/10 hover:bg-white/10 transition-all group"
+                    >
+                      <Phone className="w-5 h-5 text-cyan-400 group-hover:scale-110 transition-transform mt-0.5 flex-shrink-0" />
+                      <div className="flex flex-col">
+                        <span className="text-gray-400 text-sm">
+                          {t.contact.phone}
+                        </span>
+                        <span className="text-gray-100 font-medium">
+                          {t.contact.phoneValue}
+                        </span>
+                      </div>
+                    </a>
+                    <a
+                      href={`mailto:${t.contact.emailValue}`}
+                      className="flex items-start gap-4 p-4 rounded-xl bg-white/5 border border-white/10 hover:bg-white/10 transition-all group"
+                    >
+                      <Mail className="w-5 h-5 text-cyan-400 group-hover:scale-110 transition-transform mt-0.5 flex-shrink-0" />
+                      <div className="flex flex-col">
+                        <span className="text-gray-400 text-sm">
+                          {t.contact.email}
+                        </span>
+                        <span className="text-gray-100 font-medium">
+                          {t.contact.emailValue}
+                        </span>
+                      </div>
+                    </a>
                   </div>
                 </article>
               </ScrollSection>
