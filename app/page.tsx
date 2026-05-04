@@ -423,8 +423,8 @@ export default function NutriotanPage() {
 
             {/* Right side: Language + Mobile Menu */}
             <div className="flex items-center gap-4">
-              {/* Language Selector */}
-              <div className="relative">
+              {/* Language Selector - Desktop only */}
+              <div className="relative hidden lg:block">
                 <button
                   onClick={() => setLangMenuOpen(!langMenuOpen)}
                   className="flex items-center gap-2 px-3 py-2 rounded-full bg-white/5 border border-white/10 
@@ -505,6 +505,42 @@ export default function NutriotanPage() {
                     </a>
                   );
                 })}
+
+                {/* Language Selector - Mobile */}
+                <div className="mt-4 pt-4 border-t border-white/10">
+                  <div className="flex items-center gap-2 px-4 mb-3">
+                    <Globe className="w-4 h-4 text-cyan-400" />
+                    <span className="text-xs uppercase tracking-wider text-gray-400 font-medium">
+                      {lang === "hu" ? "Nyelv" : "Language"}
+                    </span>
+                  </div>
+                  <div className="flex gap-2 px-4">
+                    {languages.map((language) => (
+                      <button
+                        key={language.code}
+                        onClick={() => {
+                          setLang(language.code);
+                          setMobileMenuOpen(false);
+                        }}
+                        className={`
+                          flex-1 flex items-center justify-center gap-2 px-4 py-3 rounded-xl border transition-all duration-200
+                          ${
+                            lang === language.code
+                              ? "bg-cyan-500/20 border-cyan-500/40 text-cyan-400"
+                              : "bg-white/5 border-white/10 text-gray-300 hover:bg-white/10"
+                          }
+                        `}
+                      >
+                        <span className="text-sm font-bold">
+                          {language.flag}
+                        </span>
+                        <span className="text-sm font-medium">
+                          {language.label}
+                        </span>
+                      </button>
+                    ))}
+                  </div>
+                </div>
               </div>
             </div>
           )}
